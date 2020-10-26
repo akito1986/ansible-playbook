@@ -1,0 +1,7 @@
+---
+- hosts: mac_os 
+  connection: local
+  vars_files:
+    - "./host_vars/{{ stage }}.yml"
+  roles:
+    - mac_os

@@ -1,0 +1,8 @@
+[all:vars]
+stage=local
+
+[mac_os]
+localhost
+
+[mac_os:vars]
+ansible_python_interpreter=~/.anyenv/envs/pyenv/shims/python
