@@ -1,7 +1,9 @@
 ---
-- hosts: mac_os 
+- hosts: dev_machine
+  remote_user: "{{ remote_user }}"
   connection: local
   vars_files:
     - "./host_vars/{{ stage }}.yml"
   roles:
     - mac_os
+    - dev_tool

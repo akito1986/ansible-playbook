@@ -1,0 +1,9 @@
+---
+- name: Check env execution file
+  shell: "ls {{ dev_tool.home_dir }}/.anyenv/envs/{{ target }}/bin"
+  register: dev_tool_install_env_check 
+  ignore_errors: true
+
+- name: Install env
+  shell: "{{ dev_tool.home_dir }}/.anyenv/bin/anyenv install {{ target }}"
+  when: dev_tool_install_env_check is failed

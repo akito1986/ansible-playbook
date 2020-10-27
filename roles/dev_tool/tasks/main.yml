@@ -1,0 +1,16 @@
+---
+- name: Create directory for Vim plug
+  file:
+    path: "{{ dev_tool.home_dir }}/.vim/autoload/"
+    state: directory
+    mode: 0740
+
+- name: Download Vim plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: "{{ dev_tool.home_dir }}/.vim/autoload/plug.vim "
+
+- name: Install oh_my_zsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+- include: ./env.yml
+- include: ./dotfile.yml

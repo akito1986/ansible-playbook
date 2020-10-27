@@ -1,0 +1,17 @@
+- name: Copy dotfiles
+  copy:
+    src: "home/{{ item }}"
+    dest: "{{ dev_tool.home_dir }}/{{ item }}"
+    mode: 0644
+  with_items:
+    - .rubocop.yml
+    - .tmux.conf
+    - .vimrc
+
+- name: Copy dotfiles by template
+  template:
+    src: "home/{{ item }}"
+    dest: "{{ dev_tool.home_dir }}/{{ item }}"
+    mode: 0644
+  with_items:
+    - .zshrc

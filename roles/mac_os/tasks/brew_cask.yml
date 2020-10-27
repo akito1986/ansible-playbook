@@ -5,9 +5,11 @@
     state: present
   with_items:
     - docker
-    - visual-studio-code
     - wireshark
     - 1password
     - virtualbox
     - vagrant
-    - brave-browser
+    # https://github.com/ansible-collections/community.general/issues/1037 #
+    #- visual-studio-code
+    #- brave-browser
+  ignore_errors: yes

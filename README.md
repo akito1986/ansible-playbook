@@ -7,27 +7,27 @@
 まずはXCodeのインストール。  
 AppleIDが必要になる。  
 
-### PythonのSetUp
-Python周りのセットアップを行う。  
-#### Anyenvのインストール
-https://github.com/anyenv/anyenv
-
-#### Pyenvのインストール
-Anyenvインストール後以下のコマンドでpyenvはインストールできる。  
+### Install homebrew
+以下のコマンドでhomebrewをインストールする。  
+sudoのパスワードが聞かれるので用意しておく。  
 ```
-$ anyenv init pyenv
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-#### Pythonのインストール
-Pyenv経由でPythonをインストールする。  
-
-### Ansibleのインストール
-以下のコマンドでAnsibleをインストールする。  
+### Apply Ansible Playbook
+#### Install Ansible
+以下のコマンドでansibleをUser領域にインストールする。  
 ```
 $ python -m pip install --user ansible
 ```
 
-### Playbookの実行
+#### Install community module
+PATHにansible-*のDirectoryが指定されていることを前提とする。  
+```
+$ ansible-galaxy collection install community.general
+```
+
+#### Playbookの実行
 以下のコマンドでPlaybookを適用して必要なソフトウェアをインストールする。  
 ```
 $ ansible-playbook -i hosts/local site.yml
