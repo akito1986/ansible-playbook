@@ -30,6 +30,6 @@ $ ansible-galaxy collection install community.general
 #### Playbookの実行
 以下のコマンドでPlaybookを適用して必要なソフトウェアをインストールする。  
 ```
-$ ansible-playbook -i hosts/local site.yml
+$ ansible-playbook -i hosts/local site.yml --ask-vault-pass
 ```
 

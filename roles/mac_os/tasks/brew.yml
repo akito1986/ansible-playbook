@@ -12,4 +12,5 @@
       - go
       - packer
       - tmux
+      - asciinema
     state: present
