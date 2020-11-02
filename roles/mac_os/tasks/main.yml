@@ -2,3 +2,11 @@
 - include: brew_tap.yml
 - include: brew.yml
 - include: brew_cask.yml
+
+- name: Change mode on directory for zsh
+  file:
+    path: "{{ item }}"
+    mode: 0755
+  with_items:
+    - /usr/local/share/zsh
+    - /usr/local/share/zsh/site-functions
