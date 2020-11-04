@@ -14,5 +14,14 @@
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   ignore_errors: true
 
+- name: Install zsh plugins
+  git:
+    repo: "https://github.com/zsh-users/{{ item }}.git"
+    dest: "{{ dev_tool.home_dir }}/.oh-my-zsh/custom/plugins/{{ item }}"
+    update: no
+  with_items:
+    - zsh-syntax-highlighting
+    - zsh-completions
+
 - include: ./env.yml
 - include: ./dotfile.yml
