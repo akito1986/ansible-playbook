@@ -13,4 +13,5 @@
       - packer
       - tmux
       - asciinema
+      - pget
     state: present
