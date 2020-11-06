@@ -23,5 +23,17 @@
     - zsh-syntax-highlighting
     - zsh-completions
 
+- name: Install ghostplay
+  git:
+    repo: "https://github.com/ko1nksm/ghostplay.git"
+    dest: "{{ dev_tool.home_dir }}/.local/ghostplay"
+    update: no
+
+- name: link execution file
+  file:
+    src: "{{ dev_tool.home_dir }}/.local/ghostplay/ghostplay"
+    dest: "{{ dev_tool.home_dir }}/.local/bin/ghostplay"
+    state: link
+
 - include: ./env.yml
 - include: ./dotfile.yml
