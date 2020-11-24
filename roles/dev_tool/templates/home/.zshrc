@@ -93,9 +93,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User Env #
 PATH="$HOME/.anyenv/bin:$HOME/.local/bin:$HOME/.tfenv/bin:$PATH"
+RUBYOPT='-W0'
 eval "$(anyenv init -)"
 export PGDATA=$HOME/.postgres/data/
-export PATH
+export PATH RUBYOPT
 
 #
 # Set personal aliases, overriding those provided by oh-my-zsh libs,

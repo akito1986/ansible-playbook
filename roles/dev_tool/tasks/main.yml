@@ -23,5 +23,12 @@
     - zsh-syntax-highlighting
     - zsh-completions
 
+- name: Install Chrome Driver
+  unarchive:
+    src: "http://chromedriver.storage.googleapis.com/{{ chromedriver.version }}/chromedriver_mac64.zip"
+    dest: "{{ dev_tool.home_dir }}/.local/bin/"
+    remote_src: yes
+    mode: 0750
+
 - include: ./env.yml
 - include: ./dotfile.yml
