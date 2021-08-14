@@ -9,6 +9,7 @@
     - 1password
     - virtualbox
     - vagrant
+    - flutter
     # https://github.com/ansible-collections/community.general/issues/1037 #
     #- visual-studio-code
     #- brave-browser
